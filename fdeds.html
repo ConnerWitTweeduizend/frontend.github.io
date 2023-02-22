@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>               
+        <input id="vn" type="text" placeholder="voornaam"><br>
+        <input id="an" type="text" placeholder="achternaam"><br>
+        <input id="lf" type="number" placeholder="leeftijd"><br>
+        <input id="tr" type="number" placeholder="hoeveel jaar tijdreizen"><br><br>
+        <button id="tekst3" onClick="naamadder()">klik3</button>
+    </div>
+    <script>
+        function naamadder() {
+            var voornaam = document.getElementById('vn').value;
+            var achternaam = document.getElementById('an').value;
+            let leeftijd = document.getElementById('lf').value;
+            let tijdreizen = document.getElementById('tr').value;
+            let uiteinde = Number(tijdreizen) + Number(leeftijd);
+            document.write("mijn volledige naam is " + voornaam + " " + achternaam + " en over " + tijdreizen + " jaar ben ik " + uiteinde + " jaar oud");
+        }
+    </script>
+</body>
+<style>
+    body {
+        margin: 30px;
+    }
+</style>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #result {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <input type="number" id="numberInput">
+  <input type="number" id="startInput" value="1">
+  <input type="number" id="endInput" value="10">
+
+  <button id="generateButton">maak tafel</button>
+  <button id="clearButton">wis</button>
+
+  <div id="result"></div>
+  <script>
+    var numberInput = document.getElementById("numberInput");
+    var startInput = document.getElementById("startInput");
+    var endInput = document.getElementById("endInput");
+    var generateButton = document.getElementById("generateButton");
+    var clearButton = document.getElementById("clearButton");
+    var result = document.getElementById("result");
+
+    generateButton.addEventListener("click", function () {
+      var number = numberInput.value;
+      var start = startInput.value;
+      var end = endInput.value;
+      result.innerHTML = "";
+      for (var i = start; i <= end; i++) {
+        result.innerHTML += number + " x " + i + " = " + number * i + "<br>";
+      }
+    });
+    
+    clearButton.addEventListener("click", function () {
+      numberInput.value = "";
+      startInput.value = 1;
+      endInput.value = 10;
+      result.innerHTML = "";
+      numberInput.focus();
+    });
+  </script>
+</body>
+</html>

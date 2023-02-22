@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <div onClick="myFunction4()" style="height: 850px; width: 850px; background-color: green; position: relative;">
+        <div onClick="myFunction3()" id="rahh"
+            style="height: 50px; width: 50px; background-color: blue; position: relative;">
+        </div>
+    </div>
+    <div style="background-color: grey; height: 200px; width: 950px;">
+        <h3>score:</h3>
+        <h3>raak:</h3><h3 id="scoboad">0</h3>
+        <h3>mis:</h3><h3 id="scoboad2">0</h3>
+    </div>
+    <script>
+
+        let stapY = 1;
+        let stapX = 1;
+
+        const interval = setInterval(myFunction, 7);
+        function myFunction() {
+
+            let posX = document.getElementById("rahh").offsetLeft;
+            let posY = document.getElementById("rahh").offsetTop;
+            if (posY + stapY > 800 || posY + stapY < 0) {
+
+                stapY = -stapY
+            }
+            if (posX + stapX > 800 || posX + stapX < 0) {
+
+                stapX = -stapX
+            }
+            console.log("posY=" + posY + "stapY=" + stapY)
+            document.getElementById("rahh").style.top = (posY + stapY * Math.PI) + "px"
+            document.getElementById("rahh").style.left = (posX + stapX * (Math.PI * 1.5)) + "px"
+        }
+
+        let scoboad = 0;
+        function myFunction3() {
+            document.getElementById("scoboad").innerHTML = (scoboad += 1);
+            document.getElementById("scoboad2").innerHTML = (scoboad1 -= 1);
+        }
+
+        let scoboad1 = 0;
+        function myFunction4() {
+            document.getElementById("scoboad2").innerHTML = (scoboad1 += 1);
+        }
+    </script>
+</body>
+
+</html>
