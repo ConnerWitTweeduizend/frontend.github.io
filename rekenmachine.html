@@ -1,0 +1,78 @@
+<html>
+
+<body>
+    <div>
+        <h3>basic calculations</h3>
+        <input type="number" id="x1" style="width: 60px;">&nbsp 1st number</input>
+        <br>
+        <input type="text" id="op1" style="width: 60px;">&nbsp operator (+ - * /)</input>
+        <br>
+        <input type="number" id="y1" style="width: 60px;">&nbsp 2nd number</input>
+        <br><br>
+        <button onClick="test()">submit</button>
+    </div>
+    <br>
+    <div>
+        <h3>calculate square root</h3>
+        <input type="number" id="x2" style="width: 60px;">&nbsp enter number</input>
+        <br><br>
+        <button onClick="test2()">submit</button>
+    </div>
+    <br><br>
+    <div>
+        <h3>square number</h3>
+        <input type="number" id="x3" style="width: 60px;">&nbsp enter number</input>
+        <br><br>
+        <button onClick="test3()">submit</button>
+        <br><br>
+    </div>
+    <div class="divvie">
+        <p>output&nbsp</p>
+        <p id="zzz"></p>
+    </div>
+    <script>
+        function test() {
+            let x = document.getElementById("x1").value;
+            let op = document.getElementById("op1").value;
+            let y = document.getElementById("y1").value;
+            let z;
+            if (x == null) {
+                x = 0;
+            }
+            if (y == null) {
+                y = 0;
+            }
+            if (op == '+') {
+                z = Number(x) + Number(y);
+            }
+            else if (op == '-') {
+                z = Number(x) - Number(y);
+            }
+            else if (op == '*') {
+                z = Number(x) * Number(y);
+            }
+            else if (op == '/') {
+                z = Number(x) / Number(y);
+            }
+            else {
+                z = 0;
+            }
+            document.getElementById('zzz').innerHTML = z;
+            }
+            function test2() {
+                let x1 = document.getElementById("x2").value;
+                z3 = Math.sqrt(x1)
+            document.getElementById('zzz').innerHTML = z3;
+            }
+            function test3() {
+                let x2 = document.getElementById("x3").value;
+                let z2 = x2 * x2;
+                if (x2 == null) {
+                z2 = 0;
+                }
+                document.getElementById('zzz').innerHTML = z2;
+            }
+        </script>
+</body>
+
+</html>
